@@ -1,5 +1,5 @@
 # README
-![sweater-weather](https://user-images.githubusercontent.com/81930253/141661258-20e522e9-0418-4f41-8b26-c77dd8214b77.jpg)
+![sweater-weather](https://user-images.githubusercontent.com/81930253/141661285-97f92101-0cde-4125-a7eb-df0b464f19a5.jpg)
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
