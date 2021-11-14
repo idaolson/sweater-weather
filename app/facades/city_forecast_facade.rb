@@ -3,6 +3,4 @@ class CityForecastFacade
     result = GeocodeService.get_lat_lng_by_address(address)
     coords = result[:results].first[:locations].first[:latLng]
   end
-
-
 end
