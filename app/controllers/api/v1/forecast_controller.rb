@@ -1,6 +1,6 @@
 class Api::V1::ForecastController < ApplicationController
   def show
-    forecast = ForecastFacade.get_forecast(params[:location], params[:units])
+    forecast = ForecastFacade.get_weather(params[:location], params[:units])
     # need sad path
     render json: ForecastSerializer.new(forecast)
   end
