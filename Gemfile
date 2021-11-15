@@ -52,6 +52,7 @@ group :test do
   gem 'shoulda-matchers'
   gem 'launchy'
   gem 'simplecov'
+  gem "webmock"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
