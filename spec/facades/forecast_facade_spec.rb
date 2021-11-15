@@ -1,10 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe ForecastFacade do
-  it "gets the coordinates of a location" do
-    coords =  ForecastFacade.city_coords("Denver,CO")
-    expect(coords).to be_a(Hash)
-    # expect(hazards.count).to eq(4)
-    # expect(hazards.first).to be_a(Hazard)
+  it "returns the coordinates of a location in an array" do
+    coords = ForecastFacade.get_coords("Denver,CO")
+    expect(coords).to be_an Array
+    expect(coords.length).to eq(2)
+  end
+
+  it "gets the weather at a set of coordinates" do
+    weather = ForecastFacade.get_weather("Denver,CO")
+    expect(weather).to be_a Hash
   end
 end
