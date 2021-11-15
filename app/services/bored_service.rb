@@ -14,6 +14,7 @@ class BoredService
     else
       url = "?type=cooking"
       BoredClient.fetch(url)
+    end 
   end
 end
 
