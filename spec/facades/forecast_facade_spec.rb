@@ -8,7 +8,7 @@ RSpec.describe ForecastFacade do
   end
 
   it "gets the weather at a set of coordinates" do
-    weather = ForecastFacade.get_weather("Denver,CO")
-    expect(weather).to be_a Hash
+    weather = ForecastFacade.get_weather("Denver,CO", "imperial")
+    expect(weather).to be_a Forecast
   end
 end
