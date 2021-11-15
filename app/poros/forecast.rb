@@ -85,7 +85,30 @@ end
 # conditions, the first ‘description’ field from the weather data as given by OpenWeather
 # icon, string, as given by OpenWeather
 
-  def get_hourly(weather)
-
+  def get_hourly(data)
+    data.drop(1).take(8).map do |hour|
+      {
+        time: Time.at(hour[:dt]).getlocal.strftime('%I:%M:%S'),
+        temperature: hour[:temp],
+        conditions: hour[:weather].first[:description],
+        icon: hour[:weather].first[:icon]
+      }
+    end
   end
+  # {
+  #             "dt": 1636945200,
+  #             "temp": 57.45,
+  #             "weather": [
+  #                 {
+  #                     "description": "clear sky",
+  #                     "icon": "01n"
+  #                 }
+  #             ],
+  #         },
+
+#  hourly_weather, array of the next 8 hours of hourly weather data:
+# time, in a human-readable format such as “14:00:00”
+# temperature, floating point number indicating the current temperature in Fahrenheit
+# conditions, the first ‘description’ field from the weather data as given by OpenWeather
+# icon, string, as given by OpenWeather
 end
