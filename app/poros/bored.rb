@@ -10,22 +10,22 @@ class Bored
   def get_forecast(weather)
     {
       summary: weather[:conditions],
-      temperature: weather[:temperature] + ' F'
+      temperature: weather[:temperature].round(0).to_s + ' F'
     }
   end
 
   def get_activities(relax_activity, temp_activity)
     {
-      relax_activity[:activity]: {
-        type: relax_activity[:type],
-        participants: relax_activity[:participants],
-        price: relax_activity[:price]
-      },
-      temp_activity[:activity]: {
-        type: temp_activity[:type],
-        participants: temp_activity[:participants],
-        price: temp_activity[:price]
-      }
+      relax_activity[:activity] => activitize(relax_activity),
+      temp_activity[:activity] => activitize(temp_activity)
+    }
+  end
+
+  def activitize(activity)
+    {
+      type: activity[:type],
+      participants: activity[:participants],
+      price: activity[:price]
     }
   end
 
