@@ -2,9 +2,9 @@ class Forecast
   attr_reader :current, :daily, :hourly
 
   def initialize(weather)
-    @current = get_current(weather[:current])
-    @daily = get_hourly(weather[:hourly])
-    @hourly = get_daily(weather[:daily])
+    @current_weather = get_current(weather[:current])
+    @daily_weather = get_hourly(weather[:hourly])
+    @hourly_weather = get_daily(weather[:daily])
   end
 
   def get_current(data)
