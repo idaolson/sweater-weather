@@ -10,4 +10,12 @@ class ForecastFacade
     coords = result[:results].first[:locations].first[:latLng]
     [coords[:lat], coords[:lng]]
   end
+
+  def self.get_bored(address, units)
+    forecast = get_weather(address, units)
+
+    relax_activity = BoredService.find_relaxation_activity
+    temp_activity = BoredService.find_activity_by_temp(forecast.current_weather[:temperature])
+    Activity.new(address, forecast.current_weather, relax_activity, temp_activity)
+  end
 end
