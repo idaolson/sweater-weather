@@ -16,6 +16,6 @@ class ForecastFacade
 
     relax_activity = BoredService.find_relaxation_activity
     temp_activity = BoredService.find_activity_by_temp(forecast.current_weather[:temperature])
-    Bored.new(address, forecast.current_weather, relax_activity, temp_activity)
+    Activity.new(address, forecast.current_weather, relax_activity, temp_activity)
   end
 end
