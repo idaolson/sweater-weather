@@ -1,4 +1,4 @@
-class Bored
+class Activity
   attr_reader :destination, :forecast, :activities
 
   def initialize(address, weather, relax_activity, temp_activity)
