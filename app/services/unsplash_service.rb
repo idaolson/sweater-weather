@@ -1,6 +1,6 @@
-class UnslashService
-  def self.get_weather_by_coords(address)
-      url = "?query=chicago,il"
-      UnsplashClient.fetch(url)
+class UnsplashService
+  def self.get_images(query)
+    url = "?query=#{query}"
+    UnsplashClient.fetch(url)
   end
 end
