@@ -16,14 +16,15 @@ RSpec.describe "RoadTrip endpoint", :vcr do
 
   it 'returns start and ending locations, duration of trip in hours and minutes, and weather conditions at end' do
     body = {
-      "start_city": @start,
-      "end_city": @end,
+      "origin": @start,
+      "destination": @end,
       "api_key": @user.api_key
     }
 
     post '/api/v1/road_trip', params: body, as: :json
 
     result = JSON.parse(response.body, symbolize_names: true)
+
     expect(response).to be_successful
     expect(result).to be_a(Hash)
     expect(result[:data]).to be_a(Hash)
@@ -39,8 +40,8 @@ RSpec.describe "RoadTrip endpoint", :vcr do
     expect(result[:data][:attributes][:weather_at_eta]).to have_key(:conditions)
 
     body = {
-      "start_city": @start,
-      "end_city": @end2,
+      "origin": @start,
+      "destination": @end2,
       "api_key": @user.api_key
     }
 
@@ -61,4 +62,30 @@ RSpec.describe "RoadTrip endpoint", :vcr do
     expect(result[:data][:attributes][:weather_at_eta]).to have_key(:temperature)
     expect(result[:data][:attributes][:weather_at_eta]).to have_key(:conditions)
   end
+
+  it 'returns an error if origin or destination are missing' do
+    body = {
+      "origin": @start,
+      "api_key": @user.api_key
+    }
+
+    post '/api/v1/road_trip', params: body, as: :json
+
+    result = JSON.parse(response.body, symbolize_names: true)
+
+    expect(result).to eq({:error=>"Missing data."})
+  end
+
+#   it 'returns an error if api key is missing/wrong' do
+#     body = {
+#       "origin": @start,
+#       "destination": @end2
+#     }
+#
+#     post '/api/v1/road_trip', params: body, as: :json
+#
+#     result = JSON.parse(response.body, symbolize_names: true)
+# require "pry"; binding.pry
+#     expect(result).to eq({:error=>"Missing data."})
+#   end
 end
