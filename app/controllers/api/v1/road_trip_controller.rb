@@ -13,10 +13,6 @@ class Api::V1::RoadTripController < ApplicationController
 
   def verify_api_key
     user = User.find_by(api_key: params[:api_key])
-    if !user
-      render json: { error: "Unauthorized." }, status: :unauthorized
-    else
-      user
-    end
+    render json: { error: "Unauthorized." }, status: :unauthorized unless user
   end
 end
