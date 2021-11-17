@@ -3,8 +3,8 @@ class Forecast
 
   def initialize(weather)
     @current_weather = get_current(weather[:current])
-    @daily_weather = get_hourly(weather[:hourly])
-    @hourly_weather = get_daily(weather[:daily])
+    @daily_weather = get_daily(weather[:daily])
+    @hourly_weather = get_hourly(weather[:hourly])
   end
 
   def get_current(data)

@@ -1,0 +1,45 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://www.boredapi.com/api/activity?type=relaxation
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.8.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - Express
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Origin, X-Requested-With, Content-Type, Accept
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '146'
+      Etag:
+      - W/"92-o1nHW9IIbdYAQ40ifimKzrSNwMA"
+      Date:
+      - Wed, 17 Nov 2021 03:36:51 GMT
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"activity":"Do something you used to do as a kid","type":"relaxation","participants":1,"price":0.1,"link":"","key":"8827573","accessibility":0.8}'
+  recorded_at: Wed, 17 Nov 2021 03:36:50 GMT
+recorded_with: VCR 6.0.0
