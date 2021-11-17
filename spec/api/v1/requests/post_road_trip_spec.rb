@@ -24,7 +24,6 @@ RSpec.describe "RoadTrip endpoint", :vcr do
 
     result = JSON.parse(response.body, symbolize_names: true)
     expect(response).to be_successful
-    require "pry"; binding.pry
     expect(result).to be_a(Hash)
     expect(result[:data]).to be_a(Hash)
     expect(result[:data][:id]).to eq(nil)
