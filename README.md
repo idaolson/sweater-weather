@@ -1,7 +1,7 @@
 # README
-![sweater-weather](https://user-images.githubusercontent.com/81930253/141661300-c170b69c-fe03-452d-91a5-17c7c9008016.jpg)
-
 # Sweater Weather  [![CircleCI](https://circleci.com/gh/idaolson/sweater-weather/tree/main.svg?style=shield)](https://app.circleci.com/pipelines/github/idaolson/sweater-weather)
+
+![sweater-weather](https://user-images.githubusercontent.com/81930253/141661300-c170b69c-fe03-452d-91a5-17c7c9008016.jpg)
 
 ## Table of contents
 * [Description](#description)
@@ -58,7 +58,7 @@ Sweater Weather is the back-end of road-trip planning application. This app will
 | PostgreSQL          | CircleCI        |
 | Postman             | RuboCop         |
 | Bcrypt              | VCR             |
-| JSON:API Serializer | Webmock.        |
+| JSON:API Serializer | Webmock         |
 | Faraday             |                 |
 | Figaro              |                 |
 | Git                 |                 |
