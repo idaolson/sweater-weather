@@ -11,8 +11,6 @@ class Api::V1::UsersController < ApplicationController
       render json: { error: "Passwords do not match." }, status: :bad_request
     elsif new_user.save
       render json: UserSerializer.new(new_user), status: :created
-    else
-      render json: { error: "Invalid request." }, status: :bad_request
     end
   end
 
