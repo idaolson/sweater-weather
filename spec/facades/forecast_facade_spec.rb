@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe ForecastFacade do
+RSpec.describe ForecastFacade, :vcr do
   it "returns the coordinates of a location in an array" do
     coords = ForecastFacade.get_coords("Denver,CO")
     expect(coords).to be_an Array
