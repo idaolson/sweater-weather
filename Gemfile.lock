@@ -51,20 +51,12 @@ GEM
       msgpack (~> 1.0)
     builder (3.2.4)
     byebug (11.1.3)
-    capybara (3.36.0)
-      addressable
-      matrix
-      mini_mime (>= 0.1.3)
-      nokogiri (~> 1.8)
-      rack (>= 1.6.0)
-      rack-test (>= 0.6.3)
-      regexp_parser (>= 1.5, < 3.0)
-      xpath (~> 3.2)
     coderay (1.1.3)
     concurrent-ruby (1.1.9)
     crack (0.4.5)
       rexml
     crass (1.0.6)
+    date (3.0.0)
     diff-lcs (1.4.4)
     docile (1.4.0)
     erubi (1.10.0)
@@ -95,10 +87,9 @@ GEM
     hashdiff (1.0.1)
     i18n (1.8.11)
       concurrent-ruby (~> 1.0)
+    json (2.3.0)
     jsonapi-serializer (2.2.0)
       activesupport (>= 4.2)
-    launchy (2.5.0)
-      addressable (~> 2.7)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -109,7 +100,6 @@ GEM
     mail (2.7.1)
       mini_mime (>= 0.1.1)
     marcel (1.0.2)
-    matrix (0.4.2)
     method_source (1.0.0)
     mini_mime (1.1.2)
     minitest (5.14.4)
@@ -223,6 +213,7 @@ GEM
     tzinfo (1.2.9)
       thread_safe (~> 0.1)
     unicode-display_width (2.1.0)
+    vcr (6.0.0)
     webmock (3.14.0)
       addressable (>= 2.8.0)
       crack (>= 0.3.2)
@@ -230,22 +221,20 @@ GEM
     websocket-driver (0.7.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
-    xpath (3.2.0)
-      nokogiri (~> 1.8)
 
 PLATFORMS
   x86_64-darwin-20
   x86_64-linux
 
 DEPENDENCIES
-  bcrypt
+  bcrypt (~> 3.1.7)
   bootsnap (>= 1.1.0)
   byebug
-  capybara
+  date
   faraday
   figaro
+  json
   jsonapi-serializer
-  launchy
   listen (>= 3.0.5, < 3.2)
   pg (>= 0.18, < 2.0)
   pry
@@ -258,6 +247,7 @@ DEPENDENCIES
   spring
   spring-watcher-listen (~> 2.0.0)
   tzinfo-data
+  vcr
   webmock
 
 RUBY VERSION
