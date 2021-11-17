@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Activities Endpoint", :vcr do
+RSpec.describe "Activities endpoint", :vcr do
   before :each do
     @destination = "chicago,il" # 51 degress here
     @destination2 = "san antonio,tx" # 69 degress here
