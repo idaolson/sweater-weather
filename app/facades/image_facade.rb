@@ -14,12 +14,8 @@ class ImageFacade
   def self.daylight(current, sunrise, sunset)
     if current < sunrise || current >= sunset
       'night'
-    elsif current >= surise && current < 12
-      'morning'
-    elsif current >= 12 && current < sunset
-      'afternoon'
     else
-      ''
+      'day'
     end
   end
 end
